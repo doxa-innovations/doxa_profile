@@ -159,7 +159,6 @@ export default function Navbar() {
       </motion.nav>
 
       {/* Mobile Menu */}
-      {/* Mobile Menu */}
       <motion.div
         className="fixed top-0 left-0 w-full h-full bg-[#AE62C7] z-40 flex flex-col items-center justify-center text-white"
         initial={{ opacity: 0, y: "-100%" }}
@@ -172,7 +171,7 @@ export default function Navbar() {
           Explore
         </motion.button>
 
-        {/* Real Get A Quote Button (same as header) */}
+        {/* Get A Quote Button */}
         <motion.button
           onClick={toggleMenu}
           whileHover={{ scale: 1.05 }}

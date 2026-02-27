@@ -35,7 +35,7 @@ const PARTNERS: Partner[] = [
     href: "https://klaconstructionequipment.com",
     logo: "https://cdn.doxaplc.com/doxa-public/kla.svg",
   },
-   {
+  {
     name: "Classic Noodle & Burger House",
     href: "https://classicnoodle.com",
     logo: "https://cdn.doxaplc.com/doxa-public/classic_logo.png",
@@ -61,7 +61,7 @@ export default function PartnerStrip() {
                   alt={p.name}
                   width={160}
                   height={80}
-                  className="h-14 sm:h-16 md:h-20 w-auto object-contain"
+                  className="object-contain"
                 />
               </Link>
             ))}
@@ -78,7 +78,7 @@ export default function PartnerStrip() {
                   alt={p.name}
                   width={160}
                   height={80}
-                  className="h-14 sm:h-16 md:h-20 w-auto object-contain"
+                  className="object-contain"
                 />
               </Link>
             ))}
