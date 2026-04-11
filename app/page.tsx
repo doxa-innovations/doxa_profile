@@ -1,6 +1,9 @@
 import Header from "@/app/components/Header";
 import HeroSection from "@/app/components/Hero";
 import SpecializeSection from "@/app/components/Specialize";
+import OurTeam from "@/app/components/ourteam";
+import OurProducts from "./components/Ourproducts";
+import Testimonials from "@/app/components/Testimonials";
 
 export default function Home() {
   return (
@@ -14,6 +17,15 @@ export default function Home() {
       {/* 3. Partners / Trust Section */}
 
       <SpecializeSection />
+
+      {/* 4. Team Section */}
+      <OurTeam />
+
+      {/* 5. Our Products Section */}
+       <OurProducts />
+
+      {/* 6. Testimonials Section */}
+      <Testimonials />
     </main>
   );
 }
