@@ -14,7 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Doxa Profile",
-  description: "A profile page for Doxa, showcasing projects, skills, and contact information.",
+  description:
+    "A profile page for Doxa, showcasing projects, skills, and contact information.",
 };
 
 export default function RootLayout({
@@ -23,10 +24,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+        suppressHydrationWarning
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
     </html>

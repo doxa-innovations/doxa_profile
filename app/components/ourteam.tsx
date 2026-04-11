@@ -3,6 +3,7 @@
 import Image from "next/image";
 
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import { Share2 } from "lucide-react";
 
 type TeamMember = {
@@ -37,29 +38,31 @@ const TEAM: TeamMember[] = [
   },
 ];
 
-const containerVariants = {
+const smoothEase: [number, number, number, number] = [0.22, 1, 0.36, 1];
+
+const containerVariants: Variants = {
   hidden: {},
   visible: {
     transition: { staggerChildren: 0.18 },
   },
 };
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 48 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.6, ease: smoothEase },
   },
 };
 
-const shapeVariants = {
+const shapeVariants: Variants = {
   hidden: { opacity: 0, scale: 0.7, rotate: -15 },
   visible: {
     opacity: 1,
     scale: 1,
     rotate: 0,
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.7, ease: smoothEase },
   },
 };
 
@@ -71,8 +74,7 @@ export default function OurTeam() {
         className="text-center mb-16"
         initial={{ opacity: 0, y: -24 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
+        transition={{ duration: 0.6, ease: "easeOut" }}>
         <h2 className="text-4xl font-bold text-white tracking-tight">
           Our Team
         </h2>
@@ -86,19 +88,16 @@ export default function OurTeam() {
         className="mx-auto max-w-5xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center"
         variants={containerVariants}
         initial="hidden"
-        animate="visible"
-      >
+        animate="visible">
         {TEAM.map((member) => (
           <motion.div
             key={member.name}
             variants={cardVariants}
-            className="relative flex flex-col w-72"
-          >
+            className="relative flex flex-col w-72">
             {/* Shape */}
             <motion.div
               variants={shapeVariants}
-              className="absolute top-[-40px] left-1/2 -translate-x-1/2 w-72 h-72 z-0"
-            >
+              className="absolute top-[-40px] left-1/2 -translate-x-1/2 w-72 h-72 z-0">
               <Image
                 src={member.shapeSrc}
                 alt="background shape"
@@ -110,8 +109,7 @@ export default function OurTeam() {
 
             {/* Person photo */}
             <div
-              className={`relative z-10 mt-4 h-[240px] mx-auto overflow-hidden ${member.imageWidth}`}
-            >
+              className={`relative z-10 mt-4 h-[240px] mx-auto overflow-hidden ${member.imageWidth}`}>
               <Image
                 src={member.image}
                 alt={member.name}
