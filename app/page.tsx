@@ -4,6 +4,7 @@ import SpecializeSection from "@/app/components/Specialize";
 import OurTeam from "@/app/components/ourteam";
 import OurProducts from "./components/Ourproducts";
 import Testimonials from "@/app/components/Testimonials";
+import ToolsAndTechnologies from "@/app/components/ToolsAndTechnologies";
 
 export default function Home() {
   return (
@@ -26,6 +27,10 @@ export default function Home() {
 
       {/* 6. Testimonials Section */}
       <Testimonials />
+
+      {/* 7. Tools and Technologies */}
+      <ToolsAndTechnologies />
+      
     </main>
   );
 }
